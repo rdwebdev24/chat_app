@@ -42,7 +42,9 @@ io.on('connection',(socket)=>{
           console.log("user disconnected");
      })
 })
-
+app.get('/',(req,res)=>{
+     res.status(200).send({"status":200,"msg":"success"})
+})
 server.listen(port,()=>{
      console.log(`server is listening on ${port}`);
 })
