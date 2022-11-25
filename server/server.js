@@ -4,7 +4,8 @@ const {generateMessage,generateLocationMessage} = require('./utils/message');
 const http = require('http');
 const socketIO = require('socket.io');
 
-
+const moment = require('moment');
+console.log(moment().valueOf());
 const publicPath = path.join(__dirname,"/../public");
 const port = process.env.PORT || 3000;
 const app = express();

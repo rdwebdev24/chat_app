@@ -1,6 +1,5 @@
 
 let socket = io();
-
 socket.on('connect',()=>{
      console.log("connected to srever");
 })
@@ -9,22 +8,31 @@ socket.on('disconnect',()=>{
 })
 
 socket.on('newLocationMessage',(message)=>{
-     console.log(message);
-     let a = document.createElement('a');
-     let li = document.createElement('li');
-     a.setAttribute('target',"_blank");
-     a.setAttribute('href',message.url);
-     a.innerText = 'my location';
-     li.appendChild(a);
-     document.querySelector('body').append(li);
+     let formatedDate = moment(message.createdAt).format('LT');
+     const template = document.querySelector('#location-template').innerHTML;
+     const html = Mustache.render(template,{
+          from:message.from,
+          url:message.url,
+          createdAt:formatedDate
+     });
+     const div = document.createElement('div');
+     div.setAttribute('id','message_div')
+     div.innerHTML = html
+     document.querySelector('#messagediv').appendChild(div);
 })
 socket.on('newMessage',(message)=>{
-     console.log(message);
-     let li = document.createElement('li');
-     li.innerHTML = `${message.from} : ${message.text}`;
-     document.querySelector('body').append(li);
+     let formatedDate = moment(message.createdAt).format('LT');
+     const template = document.querySelector('#message-template').innerHTML;
+     const html = Mustache.render(template,{
+          from:message.from,
+          text:message.text,
+          createdAt:formatedDate
+     });
+     const div = document.createElement('div');
+     div.setAttribute('id','message_div')
+     div.innerHTML = html
+     document.querySelector('#messagediv').appendChild(div);
 })
-
 
 
 document.querySelector('#submit').addEventListener('click',(e)=>{
