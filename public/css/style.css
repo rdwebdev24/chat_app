@@ -62,7 +62,6 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  background: #026db9;
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -81,10 +80,16 @@
   display: flex;
 }
 .wrapper .message_wrapper #message-form .btn-div button {
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  background: #026db9;
   width: 8rem;
   cursor: pointer;
 }
 .wrapper .message_wrapper #message-form .btn-div #send-location {
+  width: 3rem;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

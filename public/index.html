@@ -35,7 +35,8 @@
 
      <script id="message-template" type="text/template">
           <div class="user_info">
-               <h3>{{from}}</h3> <span>{{createdAt}}</span>
+               <h3>{{from}}</h3>
+               <span>{{createdAt}}</span>
           </div>
           <div class="user_text">
                <p>{{text}}</p>
@@ -43,8 +44,13 @@
      </script>
 
      <script id="location-template" type="text/template">
-          <h3>{{from}}</h3> <span>{{createdAt}}</span> 
-          <a href="{{url}}" target="_blank">my location</a>
+          <div class="user_info">
+               <h3>{{from}}</h3> 
+               <span>{{createdAt}}</span> 
+          </div>
+          <div class="user_text">
+               <a href="{{url}}" target="_blank">my location</a>
+          </div>
      </script>
 
 

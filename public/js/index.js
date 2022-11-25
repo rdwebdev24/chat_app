@@ -46,7 +46,8 @@ document.querySelector('#submit').addEventListener('click',(e)=>{
      document.querySelector('#message').value = ''
 })
 
-document.querySelector('#send-location').addEventListener('click',()=>{
+document.querySelector('#send-location').addEventListener('click',(e)=>{
+     e.preventDefault();
      if(!navigator.geolocation){
           return alert("Geolocation is not supported by your browser");
      }
