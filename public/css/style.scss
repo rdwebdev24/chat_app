@@ -28,16 +28,13 @@
           
           #messagediv{
                overflow-y: scroll;
-               &::-webkit-scrollbar{
-                    display: none;
-               }
                padding: 0.5rem;
                background: #fff;
                height: 90vh;
                display: flex;
                flex-direction: column;
                gap: 0.5rem;
-               #message_div{
+               .message_div{
                     display: flex;
                     flex-direction: column;
                     gap: 0.3rem;
@@ -118,6 +115,7 @@
           }
      }
 }
+
 
 
 @media screen and (max-width:786px) {

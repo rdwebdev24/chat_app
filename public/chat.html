@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+     <title>bakchodi</title>
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+     <div class="wrapper">
+          <div class="users">
+               <h3>Users</h3>
+               <div class="user_cont">
+                    
+               </div>
+          </div>
+          <div class="message_wrapper">
+               <ol id="messagediv"></ol>
+               <form id="message-form">
+                    <input type="text" name="message" id="message" placeholder="message">
+                    <div class="btn-div">
+                         <button id="submit" type="submit">Send</button>
+                         <button id="send-location">
+                              <div class="location_icon"></div>
+                         </button>
+                    </div>
+               </form>
+          </div>
+     </div>
+     
+
+     <script id="message-template" type="text/template">
+          <div class="user_info">
+               <h3>{{from}}</h3>
+               <span>{{createdAt}}</span>
+          </div>
+          <div class="user_text">
+               <p>{{text}}</p>
+          </div>
+     </script>
+
+     <script id="location-template" type="text/template">
+          <div class="user_info">
+               <h3>{{from}}</h3> 
+               <span>{{createdAt}}</span> 
+          </div>
+          <div class="user_text">
+               <a href="{{url}}" target="_blank">my location</a>
+          </div>
+     </script>
+
+
+     <script src="/socket.io/socket.io.js"></script>
+     <script src="./js/index.js"></script>
+     <script src="./js/libs/moment.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+</body>
+
+</html>

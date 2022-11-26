@@ -36,10 +36,7 @@
   flex-direction: column;
   gap: 0.5rem;
 }
-.wrapper .message_wrapper #messagediv::-webkit-scrollbar {
-  display: none;
-}
-.wrapper .message_wrapper #messagediv #message_div {
+.wrapper .message_wrapper #messagediv .message_div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -47,12 +44,12 @@
   background: #eee;
   border-radius: 5px;
 }
-.wrapper .message_wrapper #messagediv #message_div .user_info {
+.wrapper .message_wrapper #messagediv .message_div .user_info {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
-.wrapper .message_wrapper #messagediv #message_div .user_info span {
+.wrapper .message_wrapper #messagediv .message_div .user_info span {
   font-size: 0.7rem;
   color: rgb(85, 79, 79);
   font-weight: bold;
